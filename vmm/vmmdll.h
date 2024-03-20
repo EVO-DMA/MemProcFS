@@ -14,7 +14,7 @@
 // Header Version: 5.9
 //
 
-#include "leechcore.h"
+#include "leechcore/leechcore.h"
 
 #ifndef __VMMDLL_H__
 #define __VMMDLL_H__

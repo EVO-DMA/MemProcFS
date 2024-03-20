@@ -5,7 +5,7 @@
 //
 #ifndef __OSCOMPATIBILITY_H__
 #define __OSCOMPATIBILITY_H__
-#include "leechcore.h"
+#include "leechcore/leechcore.h"
 #include "vmmdll.h"
 
 #ifdef _WIN32

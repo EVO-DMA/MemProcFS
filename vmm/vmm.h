@@ -6,7 +6,7 @@
 #ifndef __VMM_H__
 #define __VMM_H__
 #include "oscompatibility.h"
-#include "leechcore.h"
+#include "leechcore/leechcore.h"
 #include "vmmlog.h"
 #include "ob/ob.h"
 #include "ob/ob_tag.h"
