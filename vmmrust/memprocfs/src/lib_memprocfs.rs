@@ -145,6 +145,8 @@ pub const FLAG_NO_PREDICTIVE_READ                   : u64 = 0x0400;
 /// 
 /// This flag is only recommended for local files. improves forensic artifact order.
 pub const FLAG_FORCECACHE_READ_DISABLE              : u64 = 0x0800;
+/// Disable clearing of memory supplied to VmmScatterMemory.prepare_ex
+pub const VMMDLL_FLAG_SCATTER_PREPAREEX_NOMEMZERO   : u64 = 0x1000;
 /// Get/Set library console printouts.
 pub const CONFIG_OPT_CORE_PRINTF_ENABLE             : u64 = 0x4000000100000000;
 /// Get/Set standard verbosity.
@@ -157,6 +159,8 @@ pub const CONFIG_OPT_CORE_VERBOSE_EXTRA_TLP         : u64 = 0x4000000400000000;
 pub const CONFIG_OPT_CORE_MAX_NATIVE_ADDRESS        : u64 = 0x4000000800000000;
 /// Get the LeechCore native handle. (void*) (do not close/free).
 pub const CONFIG_OPT_CORE_LEECHCORE_HANDLE          : u64 = 0x4000001000000000;
+/// Get the vmmid that may be used with startup option '-create-from-vmmid' to create a thread-safe duplicate VMM instance.
+pub const CONFIG_OPT_CORE_VMM_ID                    : u64 = 0x4000002000000000;
 /// Get the numeric system type according to VMM C-API.
 pub const CONFIG_OPT_CORE_SYSTEM                    : u64 = 0x2000000100000000;
 /// Get the numeric memory model type according to the VMM C-API.
@@ -7655,7 +7659,7 @@ impl VmmYara<'_> {
             addr_max : self.native.vaMax,
             addr_current : self.native.vaCurrent,
             total_read_bytes : self.native.cbReadTotal,
-            total_results : self.native.cResult,
+            total_results : self.result.len() as u32,
             result : result_vec,
         }
     }

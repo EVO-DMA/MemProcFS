@@ -30,6 +30,7 @@ VOID M_VfsFc_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPlugi
 */
 VOID M_BDE_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_Conf_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
+VOID M_MiscEventlog_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_MiscProcInfo_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_MiscView_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_Phys2Virt_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
@@ -43,6 +44,7 @@ VOID M_SysPool_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPlu
 VOID M_SysProc_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_SysSvc_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_SysSyscall_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
+VOID M_SysSysinfo_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_SysTask_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_SysUser_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
 VOID M_Virt2Phys_Initialize(_In_ VMM_HANDLE H, _Inout_ PVMMDLL_PLUGIN_REGINFO pPluginRegInfo);
@@ -115,6 +117,7 @@ VOID(*g_pfnModulesAllInternal[])(_In_ VMM_HANDLE H, _In_ PVMMDLL_PLUGIN_REGINFO 
     // global modules
     M_BDE_Initialize,
     M_Conf_Initialize,
+    M_MiscEventlog_Initialize,
     M_MiscProcInfo_Initialize,
     M_MiscView_Initialize,
     M_Sys_Initialize,
@@ -126,6 +129,7 @@ VOID(*g_pfnModulesAllInternal[])(_In_ VMM_HANDLE H, _In_ PVMMDLL_PLUGIN_REGINFO 
     M_SysProc_Initialize,
     M_SysSvc_Initialize,
     M_SysSyscall_Initialize,
+    M_SysSysinfo_Initialize,
     M_SysTask_Initialize,
     M_SysUser_Initialize,
     M_WinReg_Initialize,
